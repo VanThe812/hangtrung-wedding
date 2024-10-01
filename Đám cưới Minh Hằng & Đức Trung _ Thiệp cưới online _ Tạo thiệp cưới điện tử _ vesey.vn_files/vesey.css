@@ -1,0 +1,207 @@
+.vs-hide {
+    opacity: 0.4;
+}
+
+#vs-toast {
+    border-top: 1px solid #eee;
+    border-radius: 5px;
+    padding: 15px;
+    visibility: hidden;
+    max-width: 50px;
+    margin: auto;
+    background-color: white;
+    color: #333;
+    text-align: center;
+    border-radius: 2px;
+    box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    max-height: 50px;
+    width: auto;
+
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    right: 0;
+    bottom: 30px;
+    font-size: 17px;
+    border-left: 3px solid #2bde3f;
+}
+#vs-toast.vs-toast-show {
+    visibility: visible;
+    -webkit-animation: vs-toast-fadein 0.5s, vs-toast-expand 0.5s 0.5s,
+        vs-toast-stay 6s 1s, vs-toast-shrink 0.5s 6.5s, vs-toast-fadeout 0.5s 7s;
+    animation: vs-toast-fadein 0.5s, vs-toast-expand 0.5s 0.5s,
+        vs-toast-stay 6s 1s, vs-toast-shrink 0.5s 6.5s, vs-toast-fadeout 0.5s 7s;
+}
+
+#vs-music-play-btn {
+    position: fixed;
+    cursor: pointer;
+    top: 40px;
+    left: 15px;
+    background-image: url("https://vs-thumbnail.s3.ap-southeast-1.amazonaws.com/music-play.png");
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    z-index: 9999;
+}
+
+#vs-music-play-btn.music-playing {
+    animation: rotate 2s linear infinite;
+}
+
+#vs-music-play-btn.music-paused {
+    animation-play-state: paused;
+}
+
+/* add keyframes rotate infinity */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes vs-toast-fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes vs-toast-fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes vs-toast-expand {
+    from {
+        max-width: 50px;
+        max-height: 50px;
+    }
+    to {
+        max-width: 80%;
+        max-height: 100%;
+    }
+}
+
+@keyframes vs-toast-expand {
+    from {
+        max-width: 50px;
+        max-height: 50px;
+    }
+    to {
+        max-width: 80%;
+        max-height: 100%;
+    }
+}
+@-webkit-keyframes vs-toast-stay {
+    from {
+        max-width: 80%;
+        max-height: 100%;
+    }
+    to {
+        max-width: 80%;
+        max-height: 100%;
+    }
+}
+
+@keyframes vs-toast-stay {
+    from {
+        max-width: 80%;
+        max-height: 100%;
+    }
+    to {
+        max-width: 80%;
+        max-height: 100%;
+    }
+}
+@-webkit-keyframes vs-toast-shrink {
+    from {
+        max-width: 80%;
+        max-height: 100%;
+    }
+    to {
+        max-width: 50px;
+        max-height: 50px;
+    }
+}
+
+@keyframes vs-toast-shrink {
+    from {
+        max-width: 80%;
+        max-height: 100%;
+    }
+    to {
+        max-width: 50px;
+        max-height: 50px;
+    }
+}
+
+@-webkit-keyframes vs-toast-fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 60px;
+        opacity: 0;
+    }
+}
+
+@keyframes vs-toast-fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 60px;
+        opacity: 0;
+    }
+}
+
+#music-control  {
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    z-index: 9999;
+    width: 65px;
+    height: 65px;
+    background: #fff;
+    border-radius:15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#music-control.playing img {
+    animation: rotate 2s linear infinite;
+}
+
+#music-control img {
+    width: 45px;
+    height:45px;
+    cursor: pointer;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
